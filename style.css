@@ -1,29 +1,136 @@
-*{
-    margin:0;
+
+* {
+    margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
-h1{
-    text-align: center;
-    margin-top: 150px;
-}
-.text{
-    text-align: center;
-    margin: 0 auto;
-    width: 400px;
-    border: 1px solid red;
 
+body {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px 14px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #ffffff;
+    background:
+        radial-gradient(circle at 15% 10%, rgba(75, 255, 150, 0.12), transparent 40%),
+        radial-gradient(circle at 90% 90%, rgba(75, 255, 150, 0.08), transparent 45%),
+        #010301;
 }
-.text input{
-    width: 400px;
+
+.calculator {
+    width: 100%;
+    max-width: 380px;
+    background: rgba(3, 10, 4, 0.8);
+    border: 1px solid rgba(75, 255, 150, 0.3);
+    border-radius: 18px;
+    padding: 24px 20px;
+    box-shadow: 0 0 30px rgba(75, 255, 150, 0.12), 0 10px 40px rgba(0, 0, 0, 0.6);
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 18px;
+    font-size: 2rem;
+    font-weight: 800;
+    background: linear-gradient(135deg, #ffffff 30%, #4bff96 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.text {
+    margin-bottom: 16px;
+}
+
+.text input {
+    width: 100%;
+    height: 70px;
+    padding: 0 16px;
     text-align: right;
     font-size: 2rem;
+    font-weight: 700;
+    color: #4bff96;
+    -webkit-text-fill-color: #4bff96;
+    background: rgba(0, 0, 0, 0.6);
+    border: 1px solid rgba(75, 255, 150, 0.4);
+    border-radius: 12px;
+    box-shadow: inset 0 0 12px rgba(75, 255, 150, 0.1);
 }
-.buttons{
+
+.text input::placeholder {
+    color: rgba(75, 255, 150, 0.4);
+    -webkit-text-fill-color: rgba(75, 255, 150, 0.4);
+}
+
+.buttons {
     display: grid;
-    grid-template-columns: repeat(4,1fr);
-    width: 400px;
-    margin: 0 auto;
-    height: 300px;
-  
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+}
+
+.buttons button {
+    height: 64px;
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: #ffffff;
+    background: rgba(75, 255, 150, 0.06);
+    border: 1px solid rgba(75, 255, 150, 0.3);
+    border-radius: 50%;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    -webkit-tap-highlight-color: transparent;
+}
+
+.buttons button:hover {
+    background: rgba(75, 255, 150, 0.18);
+    border-color: #4bff96;
+    box-shadow: 0 0 12px rgba(75, 255, 150, 0.4);
+    transform: translateY(-2px);
+}
+
+.buttons button:active {
+    transform: scale(0.94);
+}
+
+.buttons .operator {
+    color: #4bff96;
+    background: rgba(75, 255, 150, 0.14);
+}
+
+.buttons .clear {
+    color: #ff5c7a;
+    border-color: rgba(255, 92, 122, 0.5);
+    background: rgba(255, 92, 122, 0.1);
+}
+
+.buttons .clear:hover {
+    background: rgba(255, 92, 122, 0.22);
+    border-color: #ff5c7a;
+    box-shadow: 0 0 12px rgba(255, 92, 122, 0.4);
+}
+
+.buttons .equal {
+    color: #03120a;
+    background: #4bff96;
+    border-color: #4bff96;
+}
+
+.buttons .equal:hover {
+    background: #7dffb4;
+    box-shadow: 0 0 18px rgba(75, 255, 150, 0.7);
+}
+
+@media (max-width: 380px) {
+    .calculator {
+        padding: 18px 14px;
+    }
+
+    .buttons {
+        gap: 8px;
+    }
+
+    .buttons button {
+        height: 58px;
+    }
 }
